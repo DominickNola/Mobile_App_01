@@ -1,16 +1,17 @@
 package com.example.actionbar
 
+import android.graphics.Color
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.TextView
-import android.widget.Button
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.widget.Toast
+import android.widget.ToggleButton
 
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,20 +20,28 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-//        val helpBtn = findViewById<Button>(R.id.action_help)
-//        val popup = findViewById<TextView>(R.id.popup)
-//
-//        //handle button click
-//        helpBtn.setOnClickListener {
-//            Toast.makeText(this,"Button is clicked", Toast.LENGTH_LONG).show()
-//            popup.text = "Now it's something different."
+        val toggleButton = findViewById<ToggleButton>(R.id.toggleButton)
+        toggleButton?.setOnCheckedChangeListener { _, isChecked ->
+            val msg = "Toggle Button is " + if (isChecked) "ON" else "OFF"
+            Toast.makeText(this@MainActivity, msg, Toast.LENGTH_SHORT).show()
+            if(isChecked) {
+                popup.visibility = GONE
+            } else {
+                popup.visibility = VISIBLE
+            }
 
-//        }
+        }
+        val toggleButton3 = findViewById<ToggleButton>(R.id.toggleButton3)
+        toggleButton3?.setOnCheckedChangeListener { _, isChecked ->
+            val msg = "Toggle Button is " + if (isChecked) "ON" else "OFF"
+            Toast.makeText(this@MainActivity, msg, Toast.LENGTH_SHORT).show()
+            if(isChecked) {
+                popup.setBackgroundColor(Color.BLUE)
+            } else {
+                popup.setBackgroundColor(Color.RED)
+            }
 
-//        fab.setOnClickListener { view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                .setAction("Action", null).show()
-//        }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -48,10 +57,14 @@ class MainActivity : AppCompatActivity() {
         var selectedOption = ""
         if(item.itemId == R.id.menu_help) {
 
-            selectedOption = "Geaux Tigers!"
+            selectedOption = "Clicked Help!"
+            popup.text = "Clicked Help!"
+        }
+        if(item.itemId == R.id.action_settings) {
+
+            selectedOption = "Settings"
         }
         Toast.makeText(this, "" + selectedOption, Toast.LENGTH_SHORT).show()
-
 
         return when (item.itemId) {
             R.id.action_settings -> true

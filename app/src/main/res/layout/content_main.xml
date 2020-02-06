@@ -13,8 +13,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/popup"
+        android:visibility="visible"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="84dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginLeft="115dp"
+        android:layout_marginBottom="250dp"
+        android:textOff="textOff"
+        android:textOn="textOn"        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/popup"
+        app:layout_constraintVertical_bias="0.205" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton3"
+        android:layout_width="84dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="115dp"
+        android:layout_marginRight="115dp"
+        android:layout_marginBottom="250dp"
+        android:textOff="Color"
+        android:textOn="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/popup"
+        app:layout_constraintVertical_bias="0.208" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
