@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         val toggleButton = findViewById<ToggleButton>(R.id.toggleButton)
         toggleButton?.setOnCheckedChangeListener { _, isChecked ->
-            val msg = "Toggle Button is " + if (isChecked) "ON" else "OFF"
+            val msg = "Text is " + if (isChecked) "OFF" else "ON"
             Toast.makeText(this@MainActivity, msg, Toast.LENGTH_SHORT).show()
             if(isChecked) {
                 popup.visibility = GONE
@@ -33,12 +33,12 @@ class MainActivity : AppCompatActivity() {
         }
         val toggleButton3 = findViewById<ToggleButton>(R.id.toggleButton3)
         toggleButton3?.setOnCheckedChangeListener { _, isChecked ->
-            val msg = "Toggle Button is " + if (isChecked) "ON" else "OFF"
+            val msg = "Background Color " + if (isChecked) "BLUE" else "NORMAL"
             Toast.makeText(this@MainActivity, msg, Toast.LENGTH_SHORT).show()
             if(isChecked) {
                 popup.setBackgroundColor(Color.BLUE)
             } else {
-                popup.setBackgroundColor(Color.RED)
+                popup.setBackgroundColor(Color.TRANSPARENT)
             }
 
         }

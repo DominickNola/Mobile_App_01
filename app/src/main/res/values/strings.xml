@@ -2,7 +2,7 @@
     <string name="app_name">ActionBar</string>
     <string name="action_settings">Settings</string>
     <string name="menu_help">Help</string>
-    <string name="popup">Geaux Tigers!</string>
+    <string name="popup">ActionBar Popup</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
